@@ -33,6 +33,12 @@ while game_is_on:
         if player.distance(car) < 20:
             game_is_on = False
 
+    # detect turtle moving to the other side:
+    if player.passed_finish_line():
+        game_is_on = False
+
+
+
     car_gen_counter += 1
 
 screen.exitonclick()
