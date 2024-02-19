@@ -17,8 +17,9 @@ screen.onkey(player.move_forward, "Up")
 
 game_is_on = True
 car_gen_counter = 1
+sleep_factor = 0.1
 while game_is_on:
-    time.sleep(0.1)
+    time.sleep(sleep_factor)
     screen.update()
 
     # add every sixth car generator:
@@ -35,9 +36,7 @@ while game_is_on:
 
     # detect turtle moving to the other side:
     if player.passed_finish_line():
-        game_is_on = False
-
-
+        sleep_factor /= 1.5
 
     car_gen_counter += 1
 
