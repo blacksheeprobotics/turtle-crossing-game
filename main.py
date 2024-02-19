@@ -28,7 +28,7 @@ while game_is_on:
         car_manager.move_cars()
 
     for car in car_manager.all_cars:
-        if player.distance(car) < 25:
+        if player.distance(car) < 20:
             game_is_on = False
 
     car_gen_counter += 1
