@@ -21,12 +21,14 @@ while game_is_on:
     time.sleep(0.1)
     screen.update()
 
+    # add every sixth car generator:
     if car_gen_counter == 6:
         car_manager.create_car()
         car_gen_counter = 0
     else:
         car_manager.move_cars()
 
+    # detect turtle-car collision:
     for car in car_manager.all_cars:
         if player.distance(car) < 20:
             game_is_on = False
